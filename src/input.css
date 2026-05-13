@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  /* Green Palette */
+  --color-green: #056639;
+  --color-green-dark: #044d2c;
+  --color-green-light: #067a43;
+  --color-green-pale: #e8f5ee;
+  --color-green-muted: #c8e6d4;
+
+  /* Navy Palette */
+  --color-navy: #2B3E8B;
+  --color-navy-dark: #1e2d6b;
+  --color-navy-light: #3a50a8;
+  --color-navy-pale: #ebeef8;
+  --color-navy-muted: #c5cce8;
+
+  /* Neutral Colors */
+  --color-cream: #faf9f6;
+  --color-textdark: #1a1a2e;
+  --color-textmid: #4a4a6a;
+  --color-textmuted: #8a8aaa;
+  --color-border: #e2e4f0;
+
+  /* Fonts */
+  --font-family-title: "Urbanist", sans-serif;
+  --font-family-body: "Elms+Sans", sans-serif;
+
+  /* Tailwind-exposed font tokens */
+  --font-title: var(--font-family-title);
+  --font-body: var(--font-family-body);
+
+  
+  /* Bootstrap 5.3 Container Breakpoints */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
+
+  /* Bootstrap 5.3 Container Max Widths */
+  --container-sm: 540px;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1140px;
+  --container-xxl: 1320px;
+
+  /* Gutters (matches Bootstrap's default) */
+  --gutter-x: 1.5rem;
+  --gutter-y: 0;
+}
+
+/* Base Typography */
+@layer base {
+  html {
+    font-size: var(--font-size-root);
+    line-height: var(--line-height-normal);
+  }
+
+  body {
+    font-family: var(--font-family-body);
+    font-weight: 300;
+    font-size: var(--font-size-base);
+    color: var(--color-bodyBlack);
+    
+  }
+
+}
+
+/* Components */
+@layer components {
+  
+  
+  .container-custom {
+    @apply w-full px-[var(--gutter-x)] mx-auto;
+  }
+
+  /* Responsive Containers */
+  .container-sm {
+    @apply container;
+    max-width: var(--container-sm);
+  }
+
+  .container-md {
+    @apply container;
+    max-width: var(--container-md);
+  }
+
+  .container-lg {
+    @apply container;
+    max-width: var(--container-lg);
+  }
+
+  .container-xl {
+    @apply container;
+    max-width: var(--container-xl);
+  }
+
+  .container-xxl {
+    @apply container;
+    max-width: var(--container-xxl);
+  }
+
+  /* Fluid container (default) */
+  .container-fluid {
+    @apply container;
+    max-width: 100%;
+  }
+
+  /* Responsive Behavior (matches Bootstrap's default container) */
+  .container-custom {
+    @apply sm:max-w-[var(--container-sm)] 
+           md:max-w-[var(--container-md)] 
+           lg:max-w-[var(--container-lg)] 
+           xl:max-w-[var(--container-xl)] 
+           2xl:max-w-[var(--container-xxl)];
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
