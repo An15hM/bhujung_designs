@@ -105,6 +105,107 @@
             vertical-align: middle;
         }
     </style>
+
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css" />
+
+   <style>
+
+
+   /* GALLERY SECTION */
+
+
+.gallery-masonry {
+    column-count: 4;
+    column-gap: 18px;
+}
+
+
+.gallery-card {
+    display: inline-block;
+    width: 100%;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    margin-bottom: 18px;
+    break-inside: avoid;
+    background: #f8fafc;
+    border: 1px solid #e4e4e7;
+    width: 100%;
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: 0.5s ease;
+}
+
+/* HOVER EFFECT */
+.gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+
+.gallery-overlay {
+    display: none;
+}
+
+
+
+.gallery-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 60px;
+}
+
+.filter-btn {
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid #b7e4c7;
+    background: #e9f8ee;   /* LIGHT GREEN */
+    color: #056639;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #056639;
+    color: white;
+    border-color: #056639;
+}
+
+
+
+@media(max-width:1200px) {
+    .gallery-masonry {
+        column-count: 3;
+    }
+}
+
+@media(max-width:768px) {
+    .gallery-masonry {
+        column-count: 2;
+    }
+}
+
+@media(max-width:540px) {
+    .gallery-masonry {
+        column-count: 1;
+    }
+}
+
+</style>
 </head>
 
 <body>
@@ -348,7 +449,6 @@
         </div>
     </nav>
 
-
     <section class="border-b border-zinc-200 bg-white" id="page-title">
         <div class="container-custom mx-auto">
             <div class="flex flex-col lg:flex-row items-center justify-between py-8">
@@ -379,6 +479,212 @@
             </div>
         </div>
     </section>
+    <!-- GALLERY SECTION -->
+<section class="py-10 bg-white">
+
+    <div class="container-custom mx-auto px-6">
+ <div class="text-center max-w-3xl mx-auto mb-14">
+
+            <h2
+                class="mt-6 font-title text-[clamp(34px,4vw,52px)] leading-[1.1] text-textdark mb-5">
+                Capturing the Journey of<br>
+                <em class="font-normal text-navy text-[24px]">
+                    Mathillo Midim Hydropower Project
+                </em>
+            </h2>
+
+
+
+        </div>
+
+
+        <!-- FILTERS -->
+        <div class="gallery-filter">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="construction">
+                Under Construction
+            </button>
+
+            <button class="filter-btn" data-filter="completed">
+                Construction Completed
+            </button>
+
+            <button class="filter-btn" data-filter="operation">
+                Operation & Latest Photos
+            </button>
+
+            <button class="filter-btn" data-filter="plantation">
+                Plantation Works
+            </button>
+
+        </div>
+
+        <!-- MASONRY GRID -->
+        <div class="gallery-masonry">
+
+            <!-- VERTICAL IMAGE -->
+            <a href="./img/25.jpg"
+                data-fancybox="construction"
+                class="gallery-item gallery-card construction">
+
+                <img src="./img/25.jpg" alt="">
+
+            </a>
+
+            <!-- HORIZONTAL IMAGE -->
+            <a href="./img/33.jpg"
+                data-fancybox="construction"
+                class="gallery-item gallery-card construction">
+
+                <img src="./img/33.jpg" alt="">
+
+        
+
+            </a>
+
+            <!-- NORMAL IMAGE -->
+            <a href="./img/34.jpg"
+                data-fancybox="completed"
+                class="gallery-item gallery-card completed">
+
+                <img src="./img/34.jpg" alt="">
+
+
+            </a>
+
+            <!-- WIDE IMAGE -->
+            <a href="./img/51.jpg"
+                data-fancybox="operation"
+                class="gallery-item gallery-card operation">
+
+                <img src="./img/51.jpg" alt="">
+
+
+            </a>
+
+            <!-- TALL IMAGE -->
+            <a href="./img/52.jpg"
+                data-fancybox="operation"
+                class="gallery-item gallery-card operation">
+
+                <img src="./img/52.jpg" alt="">
+
+            </a>
+
+            <!-- LANDSCAPE -->
+            <a href="./img/53.jpg"
+                data-fancybox="plantation"
+                class="gallery-item gallery-card plantation">
+                <img src="./img/53.jpg" alt="">
+
+            </a>
+
+            <!-- EXTRA -->
+            <a href="./img/36.jpg"
+                data-fancybox="completed"
+                class="gallery-item gallery-card completed">
+
+                <img src="./img/36.jpg" alt="">
+
+                <div class="gallery-overlay">
+                    <h4>Completed Canal Section</h4>
+                </div>
+
+            </a>
+            <!-- EXTRA -->
+            <a href="./img/38.jpg"
+                data-fancybox="operation"
+                class="gallery-item gallery-card operation">
+
+                <img src="./img/38.jpg" alt="">
+
+              
+            </a>
+
+            <!-- VERTICAL IMAGE -->
+            <a href="./img/25.jpg"
+                data-fancybox="construction"
+                class="gallery-item gallery-card construction">
+                <img src="./img/25.jpg" alt="">
+
+            </a>
+
+            <!-- HORIZONTAL IMAGE -->
+            <a href="./img/33.jpg"
+                data-fancybox="construction"
+                class="gallery-item gallery-card construction">
+                <img src="./img/33.jpg" alt="">
+
+        
+
+            </a>
+
+            <!-- NORMAL IMAGE -->
+            <a href="./img/34.jpg"
+                data-fancybox="completed"
+                class="gallery-item gallery-card completed">
+                <img src="./img/34.jpg" alt="">
+
+
+            </a>
+
+            <!-- WIDE IMAGE -->
+            <a href="./img/51.jpg"
+                data-fancybox="operation"
+                class="gallery-item gallery-card operation">
+                <img src="./img/51.jpg" alt="">
+
+
+            </a>
+
+            <!-- TALL IMAGE -->
+            <a href="./img/52.jpg"
+                data-fancybox="operation"
+                class="gallery-item gallery-card operation">
+                <img src="./img/52.jpg" alt="">
+
+            </a>
+
+            <!-- LANDSCAPE -->
+            <a href="./img/53.jpg"
+                data-fancybox="plantation"
+                class="gallery-item gallery-card plantation">
+
+                <img src="./img/53.jpg" alt="">
+
+            </a>
+
+            <!-- EXTRA -->
+            <a href="./img/36.jpg"
+                data-fancybox="completed"
+                class="gallery-item gallery-card completed">
+
+                <img src="./img/36.jpg" alt="">
+
+                <div class="gallery-overlay">
+                    <h4>Completed Canal Section</h4>
+                </div>
+
+            </a>
+
+            <!-- EXTRA -->
+            <a href="./img/38.jpg"
+                data-fancybox="operation"
+                class="gallery-item gallery-card operation">
+
+                <img src="./img/38.jpg" alt="">
+
+              
+            </a>
+        </div>
+
+    </div>
+
+</section>
 
 
 
@@ -639,6 +945,51 @@
             }
         });
     </script>
+
+
+<!-- Fancybox JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+<script>
+    Fancybox.bind("[data-fancybox]", {
+        animated: true,
+        dragToClose: true,
+    });
+
+    // FILTER
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const galleryCards = document.querySelectorAll(".gallery-card");
+
+    filterButtons.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            filterButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filter = btn.dataset.filter;
+
+            galleryCards.forEach(card => {
+
+                if (filter === "all") {
+                    card.style.display = "block";
+                } else {
+
+                    if (card.classList.contains(filter)) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+
+                }
+
+            });
+
+        });
+
+    });
+</script>
+
 
 
 
